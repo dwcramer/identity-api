@@ -95,6 +95,26 @@
         <!-- commonFaults -->
         &commonFaults;
     </method>
-    <method id="addUserToGroup" name="PUT"/>
-    <method id="removeUserFromGroup" name="DELETE"/>
+    <method id="addUserToGroup" name="PUT">
+        <doc xml:lang="EN" title="Get Users For Group">
+            <db:para role="shortdesc">
+                Add a user to the group.
+            </db:para>
+        </doc>
+        <response status="204"/>
+        <!-- Common, GET -->
+        &commonFaults;
+        &getFaults;
+    </method>
+    <method id="removeUserFromGroup" name="DELETE">
+        <doc xml:lang="EN" title="Get Users For Group">
+            <db:para role="shortdesc">
+                Remove a user to the group.
+            </db:para>
+        </doc>
+        <response status="204"/>
+        <!-- Common, GET -->
+        &commonFaults;
+        &getFaults;
+    </method>
 </application>
