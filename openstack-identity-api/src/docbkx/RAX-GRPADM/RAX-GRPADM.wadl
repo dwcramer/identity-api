@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--*******************************************************-->
+<!--         Import Common XML Entities                    -->
+<!--                                                       -->
+<!--     You can resolve the entites with xmllint          -->
+<!--                                                       -->
+<!--        xmllint -noent RAX-GRPADM.wadl                 -->
+<!--*******************************************************-->
+<!DOCTYPE application [
+<!ENTITY % common  SYSTEM "https://raw.github.com/openstack/keystone/master/keystone/content/common/common.ent">
+    %common;
+]>
+
+<application xmlns="http://wadl.dev.java.net/2009/02"
+   xmlns:identity="http://docs.openstack.org/identity/api/v2.0"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:db="http://docbook.org/ns/docbook"
+   xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
+
+    <grammars>
+        <include href="xsd/api.xsd"/>
+    </grammars>
+
+    <resources base="http://localhost:35357">
+        <resource id="version" path="v2.0">
+            <resource id="RAX-GRPADM" path="RAX-GRPADM">
+                <resource id="groups" path="groups">
+                    <method href="#listGroups"/>
+                    <method href="#addGroup"/>
+                    <resource id="group" path="{groupId}">
+                        <param name="groupId" style="template" type="xsd:string"/>
+                        <method href="#getGroup"/>
+                        <method href="#deleteGroup"/>
+                        <resource id="users" path="users" type="#UserList">
+                            <resource id="user" path="{userId}">
+                                <param name="userId" style="template" type="xsd:string"/>
+                                <method href="#addUserToGroup"/>
+                                <method href="#removeUserFromGroup"/>
+                            </resource>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resource>
+    </resources>
+
+    <resource_type id="UserList">
+        <doc xml:lang="EN" title="Volume List">
+            <db:para>
+                A list of users.
+            </db:para>
+        </doc>
+        <method href="#getUsersForGroup"/>
+    </resource_type>
+
+    <!-- Methods -->
+    <method id="listGroups"  name="GET"/>
+    <method id="addGroup"    name="POST"/>
+    <method id="getGroup"    name="GET"/>
+    <method id="deleteGroup" name="DELETE"/>
+    <method id="getUsersForGroup" name="GET">
+        <doc xml:lang="EN" title="Get Users For Group">
+            <db:para role="shortdesc">
+                List users for group.
+            </db:para>
+            <db:para>
+                A list of users belonging to a particular group.
+            </db:para>
+        </doc>
+        <request>
+            <param name="marker" style="query" required="false" type="xsd:string"/>
+            <param name="limit"  style="query" required="false" type="xsd:int"/>
+        </request>
+        <response status="200 203">
+            <representation mediaType="application/xml" element="identity:users">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/users.xml"/>
+                </doc>
+                <param name="next" style="plain" type="xsd:anyURI"
+                       path="/identity:users/atom:link[@rel='next']/@href">
+                    <link resource_type="#UserList" rel="next"/>
+                </param>
+                <param name="previous" style="plain" type="xsd:anyURI"
+                       path="/identity:users/atom:link[@rel='previous']/@href">
+                    <link resource_type="#UserList" rel="previous"/>
+                </param>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/users.json"/>
+                </doc>
+            </representation>
+        </response>
+        <!-- commonFaults -->
+        &commonFaults;
+    </method>
+    <method id="addUserToGroup" name="PUT"/>
+    <method id="removeUserFromGroup" name="DELETE"/>
+</application>
