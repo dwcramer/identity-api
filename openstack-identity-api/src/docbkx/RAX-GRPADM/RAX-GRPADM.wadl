@@ -13,6 +13,7 @@
 
 <application xmlns="http://wadl.dev.java.net/2009/02"
    xmlns:identity="http://docs.openstack.org/identity/api/v2.0"
+   xmlns:grp="http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0"
    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
    xmlns:db="http://docbook.org/ns/docbook"
@@ -57,8 +58,39 @@
     <!-- Methods -->
     <method id="listGroups"  name="GET"/>
     <method id="addGroup"    name="POST"/>
-    <method id="getGroup"    name="GET"/>
-    <method id="deleteGroup" name="DELETE"/>
+    <method id="getGroup"    name="GET">
+        <doc xml:lang="EN" title="Get Users For Group">
+            <db:para role="shortdesc">
+                Get group by id.
+            </db:para>
+        </doc>
+        <response status="200 203">
+            <representation mediaType="application/xml" element="grp:group">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group.json"/>
+                </doc>
+            </representation>
+        </response>
+        <!-- Common, GET -->
+        &commonFaults;
+        &getFaults;
+    </method>
+    <method id="deleteGroup" name="DELETE">
+        <doc xml:lang="EN" title="Get Users For Group">
+            <db:para role="shortdesc">
+                Delete a group.
+            </db:para>
+        </doc>
+        <response status="204"/>
+        <!-- Common, GET -->
+        &commonFaults;
+        &getFaults;
+    </method>
     <method id="getUsersForGroup" name="GET">
         <doc xml:lang="EN" title="Get Users For Group">
             <db:para role="shortdesc">

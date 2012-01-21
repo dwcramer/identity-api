@@ -1,0 +1,22 @@
+{
+  "RAX-KSGRP:groups": [
+   {
+      "id": "group1",
+      "description": "A Description of the group"
+   },
+   {
+      "id": "group2",
+      "description": "A Description of the group"
+   },
+   {
+      "id": "group3",
+      "description": "A Description of the group"
+   }
+  ],
+  "RAX-KSGRP:groups_links": [
+      {
+          "rel" : "next",
+          "href" : "https://identity.openstack.com/v2.0/RAX-GRPADM/groups?marker=group3"
+      }
+  ]
+}
