@@ -57,7 +57,53 @@
 
     <!-- Methods -->
     <method id="listGroups"  name="GET"/>
-    <method id="addGroup"    name="POST"/>
+    <method id="addGroup"    name="POST">
+        <doc xml:lang="EN" title="Add a New Group">
+            <db:para role="shortdesc">
+                Add a new group.
+            </db:para>
+        </doc>
+        <request>
+            <representation mediaType="application/xml" element="grp:group">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group-for-create.xml" />
+                </doc>
+                <param name="group" style="plain" required="true"
+                    type="grp:GroupForCreate"
+                    path="/grp:group"/>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group-for-create.xml" />
+                </doc>
+            </representation>
+        </request>
+        <response status="201">
+            <param name="Location" style="header"
+                required="true" type="xsd:anyURI">
+                <doc xml:lang="EN" title="Location Header">
+                    <db:para>
+                        The full URL to the newly created group is
+                        returned via the <db:code>Loctaton</db:code>
+                        header.
+                    </db:para>
+                </doc>
+            </param>
+            <representation mediaType="application/xml" element="grp:group">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group.xml" />
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group.json" />
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+        &postPutFaults;
+    </method>
     <method id="getGroup"    name="GET">
         <doc xml:lang="EN" title="Get Users For Group">
             <db:para role="shortdesc">
