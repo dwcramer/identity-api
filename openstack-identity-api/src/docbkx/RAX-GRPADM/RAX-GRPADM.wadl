@@ -26,8 +26,7 @@
     <resources base="http://localhost:35357">
         <resource id="version" path="v2.0">
             <resource id="RAX-GRPADM" path="RAX-GRPADM">
-                <resource id="groups" path="groups">
-                    <method href="#listGroups"/>
+                <resource id="groups" path="groups" type="#GroupList">
                     <method href="#addGroup"/>
                     <resource id="group" path="{groupId}">
                         <param name="groupId" style="template" type="xsd:string"/>
@@ -55,8 +54,52 @@
         <method href="#getUsersForGroup"/>
     </resource_type>
 
+    <resource_type id="GroupList">
+        <doc xml:lang="EN" title="Volume List">
+            <db:para>
+                A list of groups.
+            </db:para>
+        </doc>
+        <method href="#listGroups"/>
+    </resource_type>
+
     <!-- Methods -->
-    <method id="listGroups"  name="GET"/>
+    <method id="listGroups"  name="GET">
+        <doc xml:lang="EN" title="Get Users For Group">
+            <db:para role="shortdesc">
+                List of groups.
+            </db:para>
+            <db:para>
+                A list of groups.
+            </db:para>
+        </doc>
+        <request>
+            <param name="marker" style="query" required="false" type="xsd:string"/>
+            <param name="limit"  style="query" required="false" type="xsd:int"/>
+        </request>
+        <response status="200 203">
+            <representation mediaType="application/xml" element="grp:groups">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/groups.xml"/>
+                </doc>
+                <param name="next" style="plain" type="xsd:anyURI"
+                       path="/grp:groups/atom:link[@rel='next']/@href">
+                    <link resource_type="#GroupList" rel="next"/>
+                </param>
+                <param name="previous" style="plain" type="xsd:anyURI"
+                       path="/grp:groups/atom:link[@rel='previous']/@href">
+                    <link resource_type="#GroupList" rel="previous"/>
+                </param>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/groups.json"/>
+                </doc>
+            </representation>
+        </response>
+        <!-- commonFaults -->
+        &commonFaults;
+    </method>
     <method id="addGroup"    name="POST">
         <doc xml:lang="EN" title="Add a New Group">
             <db:para role="shortdesc">
