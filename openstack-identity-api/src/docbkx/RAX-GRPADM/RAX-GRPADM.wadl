@@ -88,6 +88,7 @@
         <request>
             <param name="marker" style="query" required="false" type="xsd:string"/>
             <param name="limit"  style="query" required="false" type="xsd:int"/>
+            <param name="name"  style="query" required="false" type="xsd:string"/>
         </request>
         <response status="200 203">
             <representation mediaType="application/xml" element="grp:groups">
