@@ -29,12 +29,24 @@
                 <resource id="groups" path="groups" type="#GroupList">
                     <method href="#addGroup"/>
                     <resource id="group" path="{groupId}">
-                        <param name="groupId" style="template" type="xsd:string"/>
+                        <param name="groupId" style="template" type="xsd:string">
+                            <doc xml:lang="EN" title="GroupId">
+                                <db:para>
+                                    A unique identifier for the group.
+                                </db:para>
+                            </doc>
+                        </param>
                         <method href="#getGroup"/>
                         <method href="#deleteGroup"/>
                         <resource id="users" path="users" type="#UserList">
                             <resource id="user" path="{userId}">
-                                <param name="userId" style="template" type="xsd:string"/>
+                                <param name="userId" style="template" type="xsd:string">
+                                    <doc xml:lang="EN" title="GroupId">
+                                        <db:para>
+                                            A unique identifier for the user.
+                                        </db:para>
+                                    </doc>
+                                </param>
                                 <method href="#addUserToGroup"/>
                                 <method href="#removeUserFromGroup"/>
                             </resource>
