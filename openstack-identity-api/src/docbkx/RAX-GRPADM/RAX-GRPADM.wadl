@@ -77,12 +77,14 @@
 
     <!-- Methods -->
     <method id="listGroups"  name="GET">
-        <doc xml:lang="EN" title="Get Users For Group">
+        <doc xml:lang="EN" title="Get Groups">
             <db:para role="shortdesc">
                 List of groups.
             </db:para>
             <db:para>
-                A list of groups.
+                Displays a list of available groups.  You can use the
+                <db:parameter>name</db:parameter> to display only
+                those groups matching a particular name.
             </db:para>
         </doc>
         <request>
@@ -130,7 +132,7 @@
             </representation>
             <representation mediaType="application/json">
                 <doc xml:lang="EN">
-                    <xsdxt:code href="samples/group-for-create.xml" />
+                    <xsdxt:code href="samples/group-for-create.json" />
                 </doc>
             </representation>
         </request>
@@ -161,7 +163,7 @@
         &postPutFaults;
     </method>
     <method id="getGroup"    name="GET">
-        <doc xml:lang="EN" title="Get Users For Group">
+        <doc xml:lang="EN" title="Get Group">
             <db:para role="shortdesc">
                 Get group by id.
             </db:para>
@@ -183,7 +185,7 @@
         &getFaults;
     </method>
     <method id="deleteGroup" name="DELETE">
-        <doc xml:lang="EN" title="Get Users For Group">
+        <doc xml:lang="EN" title="Delete Group">
             <db:para role="shortdesc">
                 Delete a group.
             </db:para>
@@ -230,7 +232,7 @@
         &commonFaults;
     </method>
     <method id="addUserToGroup" name="PUT">
-        <doc xml:lang="EN" title="Get Users For Group">
+        <doc xml:lang="EN" title="Add User to Group">
             <db:para role="shortdesc">
                 Add a user to the group.
             </db:para>
@@ -241,7 +243,7 @@
         &getFaults;
     </method>
     <method id="removeUserFromGroup" name="DELETE">
-        <doc xml:lang="EN" title="Get Users For Group">
+        <doc xml:lang="EN" title="Remove User From Group">
             <db:para role="shortdesc">
                 Remove a user to the group.
             </db:para>

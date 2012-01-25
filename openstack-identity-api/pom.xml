@@ -33,7 +33,7 @@
          </profiles>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<doctools.version>1.0.9-SNAPSHOT</doctools.version>
+		<doctools.version>1.0.10-SNAPSHOT</doctools.version>
 	</properties>
 
 	<dependencies>
@@ -164,6 +164,15 @@
 		  <arg value="-xsl:${project.build.directory}/generated-resources/cloud/normalizeWadl/normalizeWadl.xsl"/>
 		  <arg value="-o:${project.build.directory}/generated-resources/xml/xslt/HP-IDM-admin.wadl"/>
 		</java>
+		<java
+		    jar="${net.sourceforge.saxon:saxon:jar}"
+		    fork="true">
+		  <arg value="-u"/>
+		  <arg value="-s:src/docbkx/RAX-GRPADM/RAX-GRPADM.wadl"/>
+		  <arg value="-xsl:${project.build.directory}/generated-resources/cloud/normalizeWadl/normalizeWadl.xsl"/>
+		  <arg value="-o:${project.build.directory}/generated-resources/xml/xslt/RAX-GRPADM.wadl"/>
+        <arg value="flattenXsds=false"/>
+		</java>
 	      </target>
 	    </configuration>
 	    <goals>
@@ -253,9 +262,6 @@
 		          file="${basedir}/target/docbkx/pdf/OS-KSEC2-service-devguide.pdf"
 		          tofile="${basedir}/target/docbkx/webhelp/identitydevguide/service/OS-KSEC2-service-devguide.pdf"/>
 		        <move failonerror="false"
-		          file="${basedir}/target/docbkx/pdf/RAX-KSGRP-service-devguide.pdf"
-		          tofile="${basedir}/target/docbkx/webhelp/identitydevguide/service/RAX-KSGRP-service-devguide.pdf"/>
-		        <move failonerror="false"
 		          file="${basedir}/target/docbkx/pdf/RAX-KSKEY-admin-devguide.pdf"
 		          tofile="${basedir}/target/docbkx/webhelp/identitydevguide/admin/RAX-KSKEY-admin-devguide.pdf"/>
 		        <move failonerror="false"
@@ -264,6 +270,31 @@
                     </postProcess>
 		      </configuration>
 		    </execution>
+          <execution>
+              <id>RAX-GRPADM</id>
+              <goals>
+                  <goal>generate-pdf</goal>
+                  <goal>generate-webhelp</goal>
+              </goals>
+              <phase>generate-sources</phase>
+              <configuration>
+                  <includes>RAX-GRPADM/RAX-GRPADM.xml</includes>
+                  <trimWadlUriCount>1</trimWadlUriCount>
+                  <pdfUrl>RAX-GRPADM.pdf</pdfUrl>
+                  <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/rax-grpadm/content</canonicalUrlBase>
+                  <chunkSectionDepth>0</chunkSectionDepth>
+                  <postProcess>
+                      <copy todir="target/docbkx/webhelp/RAX-GRPADM/RAX-GRPADM/content/">
+                          <fileset dir="target/docbkx/pdf/RAX-GRPADM">
+                              <include name="**/*.pdf"/>
+                          </fileset>
+                          <fileset dir="src/docbkx/RAX-GRPADM/samples/">
+                              <include name="ext_query.xml"/>
+                          </fileset>
+                      </copy>
+                  </postProcess>
+              </configuration>
+          </execution>
           <execution>
               <id>HP-IDM</id>
               <goals>
@@ -296,7 +327,7 @@
                     <sourceDirectory>src/docbkx</sourceDirectory>
                     <includes>
                     identity-dev-guide.xml,,OS-KSADM-admin-devguide.xml,OS-KSCATALOG-admin-devguide.xml,RAX-KSKEY-service-devguide.xml,
-	            OS-KSEC2-service-devguide.xml,RAX-KSGRP-service-devguide.xml,RAX-KSKEY-admin-devguide.xml,OS-KSEC2-admin-devguide.xml
+	            OS-KSEC2-service-devguide.xml,RAX-KSKEY-admin-devguide.xml,OS-KSEC2-admin-devguide.xml
                     </includes>
                     <profileSecurity>reviewer</profileSecurity>
                     <branding>openstack</branding>
