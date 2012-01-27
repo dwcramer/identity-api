@@ -37,6 +37,7 @@
                             </doc>
                         </param>
                         <method href="#getGroup"/>
+                        <method href="#updateGroup"/>
                         <method href="#deleteGroup"/>
                         <resource id="users" path="users" type="#UserList">
                             <resource id="user" path="{userId}">
@@ -183,6 +184,43 @@
         <!-- Common, GET -->
         &commonFaults;
         &getFaults;
+    </method>
+    <method id="updateGroup"    name="PUT">
+        <doc xml:lang="EN" title="Update a Group">
+            <db:para role="shortdesc">
+                Update a group.
+            </db:para>
+        </doc>
+        <request>
+            <representation mediaType="application/xml" element="grp:group">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group-for-update.xml" />
+                </doc>
+                <param name="group" style="plain" required="true"
+                    type="grp:GroupForUpdate"
+                    path="/grp:group"/>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group-for-update.json" />
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml" element="grp:group">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group-updated.xml" />
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc xml:lang="EN">
+                    <xsdxt:code href="samples/group-updated.json" />
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+        &postPutFaults;
     </method>
     <method id="deleteGroup" name="DELETE">
         <doc xml:lang="EN" title="Delete Group">

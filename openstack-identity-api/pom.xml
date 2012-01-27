@@ -171,7 +171,6 @@
 		  <arg value="-s:src/docbkx/RAX-GRPADM/RAX-GRPADM.wadl"/>
 		  <arg value="-xsl:${project.build.directory}/generated-resources/cloud/normalizeWadl/normalizeWadl.xsl"/>
 		  <arg value="-o:${project.build.directory}/generated-resources/xml/xslt/RAX-GRPADM.wadl"/>
-        <arg value="flattenXsds=false"/>
 		</java>
 	      </target>
 	    </configuration>

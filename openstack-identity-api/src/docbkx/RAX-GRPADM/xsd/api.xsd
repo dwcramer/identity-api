@@ -33,4 +33,18 @@
             </restriction>
         </complexContent>
     </complexType>
+
+    <complexType name="GroupForUpdate">
+        <complexContent>
+            <restriction base="RAX-KSGRP:Group">
+                <sequence>
+                    <element name="description" type="xsd:string" maxOccurs="1"/>
+                    <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded" />
+                </sequence>
+                <attribute name="id" type="xsd:string" use="optional"/>
+                <attribute name="name" type="xsd:string" use="optional"/>
+                <anyAttribute namespace="##other" processContents="lax"/>
+            </restriction>
+        </complexContent>
+    </complexType>
 </schema>
