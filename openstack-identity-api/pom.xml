@@ -270,6 +270,28 @@
 		      </configuration>
 		    </execution>
           <execution>
+              <id>RAX-KSGRP</id>
+              <goals>
+                  <goal>generate-pdf</goal>
+                  <goal>generate-webhelp</goal>
+              </goals>
+              <phase>generate-sources</phase>
+              <configuration>
+                  <includes>RAX-KSGRP/RAX-KSGRP.xml</includes>
+                  <trimWadlUriCount>1</trimWadlUriCount>
+                  <pdfUrl>RAX-KSGRP.pdf</pdfUrl>
+                  <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/rax-ksgrp/content</canonicalUrlBase>
+                  <chunkSectionDepth>0</chunkSectionDepth>
+                  <postProcess>
+                      <copy todir="target/docbkx/webhelp/RAX-KSGRP/RAX-KSGRP/content/">
+                          <fileset dir="target/docbkx/pdf/RAX-KSGRP">
+                              <include name="**/*.pdf"/>
+                          </fileset>
+                      </copy>
+                  </postProcess>
+              </configuration>
+          </execution>
+          <execution>
               <id>RAX-GRPADM</id>
               <goals>
                   <goal>generate-pdf</goal>
