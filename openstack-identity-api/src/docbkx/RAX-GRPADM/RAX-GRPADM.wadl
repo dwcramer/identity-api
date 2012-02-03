@@ -27,6 +27,13 @@
         <resource id="version" path="v2.0">
             <resource id="RAX-GRPADM" path="RAX-GRPADM">
                 <resource id="groups" path="groups" type="#GroupList">
+                    <param name="X-Auth-Token" style="header" type="xsd:string" required="true">
+                        <doc xml:lang="EN" title="Auth Token">
+                            <db:para>
+                                A valid authentication token.
+                            </db:para>
+                        </doc>
+                    </param>
                     <method href="#addGroup"/>
                     <resource id="group" path="{groupId}">
                         <param name="groupId" style="template" type="xsd:string">
