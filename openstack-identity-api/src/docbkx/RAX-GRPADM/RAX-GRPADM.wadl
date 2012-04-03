@@ -7,7 +7,7 @@
 <!--        xmllint -noent RAX-GRPADM.wadl                 -->
 <!--*******************************************************-->
 <!DOCTYPE application [
-<!ENTITY % common  SYSTEM "https://raw.github.com/openstack/keystone/master/keystone/content/common/common.ent">
+<!ENTITY % common  SYSTEM "https://github.com/openstack/identity-api/raw/master/openstack-identity-api/src/docbkx/common/common.ent">
     %common;
 ]>
 
