@@ -160,7 +160,7 @@
 		    jar="${net.sourceforge.saxon:saxon:jar}"
 		    fork="true">
 		  <arg value="-u"/>
-		  <arg value="-s:src/docbkx/HP-IDM/HP-IDM-admin.wadl"/>
+		  <arg value="-s:src/docbkx/extensions/HP-IDM/HP-IDM-admin.wadl"/>
 		  <arg value="-xsl:${project.build.directory}/generated-resources/cloud/normalizeWadl/normalizeWadl.xsl"/>
 		  <arg value="-o:${project.build.directory}/generated-resources/xml/xslt/HP-IDM-admin.wadl"/>
 		</java>
@@ -282,7 +282,7 @@
                           <fileset dir="target/docbkx/pdf/HP-IDM">
                               <include name="**/*.pdf"/>
                           </fileset>
-                          <fileset dir="src/docbkx/HP-IDM/samples/">
+                          <fileset dir="src/docbkx/extensions/HP-IDM/samples/">
                               <include name="ext_query.xml"/>
                           </fileset>
                       </copy>
