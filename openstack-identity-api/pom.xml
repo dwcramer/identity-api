@@ -140,16 +140,16 @@
                             <goal>generate-pdf</goal>
                             <goal>generate-webhelp</goal>
                         </goals>
-                        <!-- <phase>generate-sources</phase>-->
+                        <phase>generate-sources</phase>
                         <configuration>
-                            <includes>HP-IDM/HP-IDM.xml</includes>
+                            <includes>extensions/HP-IDM/HP-IDM.xml</includes>
                             <trimWadlUriCount>1</trimWadlUriCount>
                             <pdfUrl>hp-idm.pdf</pdfUrl>
                             <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/hp-idm/content</canonicalUrlBase>
                             <chunkSectionDepth>0</chunkSectionDepth>
                             <postProcess>
-                                <copy todir="target/docbkx/webhelp/HP-IDM/HP-IDM/content/">
-                                    <fileset dir="target/docbkx/pdf/HP-IDM">
+                                <copy todir="target/docbkx/webhelp/extensions/HP-IDM/HP-IDM/content/">
+                                    <fileset dir="target/docbkx/pdf/extensions/HP-IDM">
                                         <include name="**/*.pdf"/>
                                     </fileset>
                                     <fileset dir="src/docbkx/extensions/HP-IDM/samples/">
