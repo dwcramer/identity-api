@@ -8,7 +8,7 @@
 <!-- xmllint -noent RAX-KSQA-admin.wadl -->
 <!--*******************************************************-->
 <!DOCTYPE application [
-<!ENTITY % common SYSTEM "common.ent">
+<!ENTITY % common SYSTEM "../../common/common.ent">
 %common;
 ]>
 <application xmlns="http://wadl.dev.java.net/2009/02"
@@ -25,8 +25,8 @@
     ">
 
     <grammars>
-        <include href="xsd/api.xsd"/>
-        <include href="xsd/api-common.xsd"/>
+        <include href="../../common/xsd/api.xsd"/>
+        <include href="../../common/xsd/api-common.xsd"/>
         <include href="xsd/RAX-KSQA-secretQA.xsd"/>
     </grammars>
     <!--*******************************************************-->

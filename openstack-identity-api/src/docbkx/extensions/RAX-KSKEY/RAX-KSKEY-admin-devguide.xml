@@ -22,9 +22,7 @@
         <!ENTITY ERROR_CODES 'Error Response Code(s):'>
 
         <!-- Information about the extension -->
-        <!ENTITY VERSION  "v1.0">
         <!ENTITY PUB_DATE "2011-09-13">
-        <!ENTITY ALIAS "RAX-KSKEY">
         <!ENTITY URI_REFHEAD '
         <thead xmlns="http://docbook.org/ns/docbook">
         <tr>
@@ -33,17 +31,8 @@
         <td colspan="4">Description</td>
         </tr>
         </thead>'>
-        <!ENTITY NAMESPACE "http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0">
-        <!ENTITY CURRENTGUIDE "http://docs.rackspace.com/api">
-        <!ENTITY EXTENSIONXSD "../service/xsd/RAX-KSKEY-credentials.xsd">
-        <!ENTITY CURRENTWADL "../admin/RAX-KSKEY-admin.wadl">
-        <!ENTITY APIKEYCREDENTIALSREQUESTXML "../common/samples/apiKeyCredentials.xml">
-        <!ENTITY APIKEYCREDENTIALSREQUESTJSON "../common/samples/apiKeyCredentials.json">
-        <!ENTITY APIKEYCREDENTIALSRESPONSEXML "../common/samples/auth.xml">
-        <!ENTITY APIKEYCREDENTIALSRESPONSEJSON "../common/samples/auth.json">
-        <!ENTITY EXTENSIONQUERYRESPONSEXML "../contrib/extensions/service/raxgrp/extension.xml">
-        <!ENTITY EXTENSIONQUERYRESPONSEJSON "../contrib/extensions/service/raxgrp/extension.json">
-        
+        <!ENTITY APIKEYCREDENTIALSREQUESTXML "samples/apiKeyCredentials.xml">
+        <!ENTITY APIKEYCREDENTIALSREQUESTJSON "samples/apiKeyCredentials.json">
 ]>
 <book xmlns="http://docbook.org/ns/docbook"
       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -51,30 +40,52 @@
       xmlns:svg="http://www.w3.org/2000/svg"
       xmlns:m="http://www.w3.org/1998/Math/MathML"
       xmlns:html="http://www.w3.org/1999/xhtml"
-      version="5.0"  status="draft" xml:id="book-0001">
-    <title>Rackspace API Key Authentication Extension (Admin Operations)</title>
-  <info>
-    <author>
-      <personname>
-        <firstname/>
-        <surname/>
-      </personname>
-      <affiliation>
-        <orgname>Rackspace Cloud</orgname>
-      </affiliation>
-    </author>
-    <copyright>
-        <year>2011</year>
-        <holder>Rackspace US, Inc.</holder>
-    </copyright>
-    <releaseinfo>EXT v1.0</releaseinfo>
-      <productname>>Keystone - OpenStack Identity</productname>
-    <pubdate>&PUB_DATE;</pubdate>
-    <legalnotice role="rs-api">
-        <annotation>
-            <remark>Copyright details are filled in by the template.</remark>
-        </annotation>
-    </legalnotice>
+      version="5.0"  status="draft" xml:id="RAX-KSKEY-admin">
+    <?rax subtitle.font.size="12px"?>
+    <title>OpenStack Identity Rackspace API Key Authentication Extension (Admin Operations)</title>
+    <titleabbrev>RAX-KSKEY (Admin)</titleabbrev>
+    <info>
+        <author>
+            <personname>
+                <firstname/>
+                <surname/>
+            </personname>
+            <affiliation>
+                <orgname>Rackspace Cloud</orgname>
+            </affiliation>
+        </author>
+        <copyright>
+            <year>2011</year>
+            <holder>Rackspace US, Inc.</holder>
+        </copyright>
+        <productname>OpenStack Identity</productname>
+        <pubdate>&PUB_DATE;</pubdate>
+        <legalnotice role="rs-api">
+            <annotation>
+                <remark>Copyright details are filled in by the template.</remark>
+            </annotation>
+        </legalnotice>
+        <othercredit>
+            <personname>
+                <firstname>Joe</firstname>
+                <surname>Savak</surname>
+            </personname>
+            <email>joe.savak@RACKSPACE.COM</email>
+        </othercredit>
+        <extension  xmlns="http://docs.openstack.org/common/api/v1.0"
+                    xmlns:atom="http://www.w3.org/2005/Atom"
+                    name="Rackspace API Key authentication" namespace="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
+                    alias="RAX-KSKEY"
+                    updated="2011-08-14T13:25:27-06:00">
+            <description>
+                Rackspace extensions to Keystone v2.0 API
+                enabling API Key authentication.
+            </description>
+            <atom:link rel="describedby" type="application/pdf"
+                       href="https://github.com/openstack/keystone/raw/master/keystone/content/admin/RAX-KSKEY-admin-devguide.pdf"/>
+            <atom:link rel="describedby" type="application/vnd.sun.wadl+xml"
+                       href="https://github.com/openstack/keystone/raw/master/keystone/content/admin/RAX-KSKEY-admin.wadl"/>
+        </extension>
     <abstract>
       <para>
           This document is intended for service developers interested
@@ -83,112 +94,21 @@
           (<abbrev>API</abbrev>).
       </para>
     </abstract>
+    <revhistory>
+        <revision>
+            <date>2011-09-13</date>
+            <revdescription>
+                <itemizedlist spacing="compact">
+                    <listitem>
+                        <para>
+                            Initial release.
+                        </para>
+                    </listitem>
+                </itemizedlist>
+            </revdescription>
+        </revision>
+    </revhistory>
   </info>
-    <chapter xml:id="chapter-0000">
-      <title>About This Extension</title>
-      <variablelist spacing="compact">
-          <varlistentry>
-              <term>Name</term>
-              <listitem>
-                  <para>Rackspace API Key Authentication Admin Extension</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Namespace</term>
-              <listitem>
-                  <para>&NAMESPACE;</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Alias</term>
-              <listitem>
-                  <para>&ALIAS;</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Dependencies</term>
-              <listitem>
-                  <para>Keystone - OpenStack Identity</para>
-                  <para>>&ALIAS; Extension</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Doc Link (PDF)</term>
-              <listitem>
-                  <para>
-                        <link
-                            xlink:href="&CURRENTGUIDE;">
-                            &CURRENTGUIDE;
-                        </link>
-                    </para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Doc Link (WADL)</term>
-              <listitem>
-                  <para>
-                      <link
-                          xlink:href="&CURRENTWADL;"
-                          >
-                          &CURRENTWADL;
-                      </link>
-                  </para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Doc Link (XSD)</term>
-              <listitem>
-                  <para>
-                      <link xlink:href="&EXTENSIONXSD;">
-                          &EXTENSIONXSD;
-                      </link>
-                  </para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Short Description</term>
-              <listitem>
-                  <para>
-                      Rackspace extensions to Keystone v2.0 API enabling API Key authentication.
-                  </para>
-              </listitem>
-          </varlistentry>
-      </variablelist>
-      <?hard-pagebreak?>
-      <example>
-          <title>Extension Query Response: XML</title>
-          <programlisting language="xml"><xi:include href="&EXTENSIONQUERYRESPONSEXML;" parse="text"></xi:include></programlisting>
-      </example>
-      <example>
-          <title>Extension Query Response: JSON</title>
-          <programlisting language="javascript"><xi:include href="&EXTENSIONQUERYRESPONSEJSON;" parse="text"/></programlisting>
-      </example>
-      <section xml:id="Doc-Change-0001">
-          <title>Document Change History</title>
-          <informaltable rules='all'>
-              <thead>
-                  <tr>
-                      <td align="center" colspan="1">Revision Date</td>
-                      <td align="center" colspan="4">Summary of Changes</td>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td colspan="1" align="center">Sep. 13, 2011</td>
-                      <td colspan="4">
-                          <itemizedlist spacing="compact">
-                              <listitem>
-                                  <para>
-                                      Initial release.
-                                  </para>
-                              </listitem>
-                          </itemizedlist>
-                      </td>
-                  </tr>
-              </tbody>
-          </informaltable>
-      </section>
-  </chapter>
   <chapter xml:id="chapter-0001">
       <title>Summary of Changes</title>
       <para>

@@ -25,7 +25,7 @@
       xmlns:acme="http://docs.acme.org/servers/api/ext/template/v1.0"
       xmlns:wadl="http://wadl.dev.java.net/2009/02"
       xmlns:osapi="http://docs.openstack.org/compute/api/v1.1"
-      version="5.0" xml:id="example" status="DRAFT">
+      version="5.0" xml:id="hp-idm" status="DRAFT">
   <title>OpenStack Identity HP-IDM Extension</title>
   <titleabbrev>&ALIAS;</titleabbrev>
   <info>
@@ -49,6 +49,34 @@
             <remark>Copyright details are filled in by the template.</remark>
         </annotation>
     </legalnotice>
+    <othercredit>
+        <personname>
+            <firstname>Guang</firstname>
+            <surname>Yee</surname>
+        </personname>
+        <email>guang.yee@hp.com</email>
+    </othercredit>
+    <extension
+        xmlns="http://docs.openstack.org/common/api/v1.0"
+        xmlns:atom="http://www.w3.org/2005/Atom"
+        name="HP Token Validation Extension"
+        namespace="http://docs.openstack.org/identity/api/ext/HP-IDM/v1.0"
+        alias="HP-IDM"
+        updated="2011-12-06T17:00:00-00:00">
+        <description>
+              Validate token with the optional HP-IDM-serviceId
+              parameter so that only the roles associated with the
+              given service IDs are returned. See
+              https://bugs.launchpad.net/keystone/+bug/890411 for more
+              details.
+        </description>
+        <atom:link rel="describedby"
+                   type="application/pdf"
+                   href="https://github.com/openstack/keystone/raw/master/keystone/content/admin/HP-IDM-admin-devguide.pdf"/>
+        <atom:link rel="describedby"
+                   type="application/vnd.sun.wadl+xml"
+                   href="https://raw.github.com/openstack/keystone/master/keystone/content/admin/HP-IDM-admin.wadl"/>
+    </extension>
     <abstract>
         <!--
             Insert a short description of your template.  This is used
@@ -75,130 +103,6 @@
         </revision>
     </revhistory>
   </info>
-  <chapter xml:id="AboutExtension">
-      <title>About This Extension</title>
-      <variablelist spacing="compact">
-          <varlistentry>
-              <term>Name</term>
-              <listitem>
-                  <para>HP-IDM Extension</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Namespace</term>
-              <listitem>
-                  <para>&NAMESPACE;</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Alias</term>
-              <listitem>
-                  <para>&ALIAS;</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Contact</term>
-              <listitem>
-                  <para>
-                      <personname>
-                          <firstname>Guang</firstname>
-                          <surname>Yee</surname>
-                      </personname>
-                      <email>guang.yee@hp.com</email>
-                  </para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Status</term>
-              <listitem>
-                  <para>ALPHA</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Last Update</term>
-              <listitem>
-                  <para>&PUB_DATE;</para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Dependencies</term>
-                <listitem>
-                    <para>Keystone API v2.0 (2011-12-21)</para>
-                </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Doc Link (PDF)</term>
-              <listitem>
-                  <para>
-                      <link xlink:href="http://docs.openstack.org/api/openstack-identity/content/admin/HP-IDM-admin-devguide.pdf">
-                          http://docs.openstack.org/api/openstack-identity/ext/admin/HP-IDM-admin-devguide.pdf
-                      </link>
-                  </para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Doc Link (WADL)</term>
-              <listitem>
-                  <para>
-                      <link xlink:href="../admin/HP-IDM-admin.wadl">
-                          http://docs.openstack.org/api/openstack-identity/ext/admin/HP-IDM-admin.wadl
-                      </link>
-                  </para>
-              </listitem>
-          </varlistentry>
-          <varlistentry>
-              <term>Short Description</term>
-              <listitem>
-                  <!--
-                      A short description of the extension goes here.
-                      This short descrption is aimed at devs.
-                  -->
-                  <para>
-                      HP-IDM Admin Extension to Keystone V2.0 API adds capability
-                      to filter roles with optional service IDs for token validation
-                      to mitigate security risks with role name conflicts.
-                  </para>
-              </listitem>
-          </varlistentry>
-      </variablelist>
-      <!--
-          This is how you do a page break in the PDF output.  It's
-          optional.
-      -->
-      <?hard-pagebreak?>
-      <!--
-          The following examples should illustrate the extension query
-          response.
-      -->
-      <example>
-          <title>Sample Valid Token Request</title>
-          <programlisting language="xml"><xi:include href="samples/sample_request.txt" parse="text"/></programlisting>
-      </example>
-      <example>
-           <title>Sample Valid Token Request With Global Service ID Specified</title>
-           <programlisting language="xml"><xi:include href="samples/sample_request_with_global_sid.txt" parse="text"/></programlisting>
-      </example>
-      <example>
-          <title>Extension Query Response: XML</title>
-          <programlisting language="xml"><xi:include href="samples/ext_query.xml" parse="text"/></programlisting>
-      </example>
-      <example>
-          <title>Extension Query Response: JSON</title>
-          <programlisting language="javascript"><xi:include href="samples/ext_query.json" parse="text"/></programlisting>
-      </example>
-      <section xml:id="hp-idm_doc-change-history">
-          <title>Document Change History</title>
-          <para>
-              The most recent changes to this document are described
-              below.
-          </para>
-          <!--
-              The rev history, described in the info element above,
-              should be output in this part of the document.
-          -->
-          <?rax revhistory?>
-      </section>
-  </chapter>
   <chapter xml:id="hp-idm_summary-of-changes">
       <title>Summary of Changes</title>
       <!--
@@ -216,6 +120,18 @@
           </link>
           for more details.
       </para>
+      <!--
+          The following examples should illustrate the extension query
+          response.
+      -->
+      <example>
+          <title>Sample Valid Token Request</title>
+          <programlisting language="xml"><xi:include href="samples/sample_request.txt" parse="text"/></programlisting>
+      </example>
+      <example>
+           <title>Sample Valid Token Request With Global Service ID Specified</title>
+           <programlisting language="xml"><xi:include href="samples/sample_request_with_global_sid.txt" parse="text"/></programlisting>
+      </example>
       <section xml:id="hp-idm-new-headers">
           <title>New Headers</title>
           <!--
