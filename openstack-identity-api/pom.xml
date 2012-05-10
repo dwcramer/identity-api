@@ -200,6 +200,28 @@
                             </postProcess>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>RAX-KSQA-admin</id>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includes>extensions/RAX-KSQA/RAX-KSQA-admin.xml</includes>
+                            <trimWadlUriCount>1</trimWadlUriCount>
+                            <pdfUrl>RAX-KSQA-admin.pdf</pdfUrl>
+                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-KSQA-admin/content</canonicalUrlBase>
+                            <chunkSectionDepth>0</chunkSectionDepth>
+                            <postProcess>
+                                <copy todir="target/docbkx/webhelp/extensions/RAX-KSQA/RAX-KSQA-admin/content/">
+                                    <fileset dir="target/docbkx/pdf/extensions/RAX-KSQA">
+                                        <include name="**/RAX-KSQA-admin.pdf"/>
+                                    </fileset>
+                                </copy>
+                            </postProcess>
+                        </configuration>
+                    </execution>
                 </executions>
                 <configuration>
                     <!-- These parameters apply to pdf and webhelp -->
