@@ -152,9 +152,6 @@
                                     <fileset dir="target/docbkx/pdf/extensions/HP-IDM">
                                         <include name="**/*.pdf"/>
                                     </fileset>
-                                    <fileset dir="src/docbkx/extensions/HP-IDM/samples/">
-                                        <include name="ext_query.xml"/>
-                                    </fileset>
                                 </copy>
                             </postProcess>
                         </configuration>
