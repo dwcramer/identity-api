@@ -156,6 +156,28 @@
                             </postProcess>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>RAX-KSKEY-admin</id>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includes>extensions/RAX-KSKEY/RAX-KSKEY-admin-devguide.xml</includes>
+                            <trimWadlUriCount>1</trimWadlUriCount>
+                            <pdfUrl>RAX-KSKEY-admin-devguide.pdf</pdfUrl>
+                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-KSKEY-admin-devguide/content</canonicalUrlBase>
+                            <chunkSectionDepth>0</chunkSectionDepth>
+                            <postProcess>
+                                <copy todir="target/docbkx/webhelp/extensions/RAX-KSKEY/RAX-KSKEY-admin-devguide/content/">
+                                    <fileset dir="target/docbkx/pdf/extensions/RAX-KSKEY">
+                                        <include name="**/*.pdf"/>
+                                    </fileset>
+                                </copy>
+                            </postProcess>
+                        </configuration>
+                    </execution>
                 </executions>
                 <configuration>
                     <!-- These parameters apply to pdf and webhelp -->

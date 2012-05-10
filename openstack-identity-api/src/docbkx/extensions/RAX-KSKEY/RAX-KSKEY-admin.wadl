@@ -8,7 +8,7 @@
 <!--        xmllint -noent RAX-KSKEY-admin.wadl             -->
 <!--*******************************************************-->
 <!DOCTYPE application [
-<!ENTITY % common  SYSTEM "common.ent">
+<!ENTITY % common  SYSTEM "../../common/common.ent">
 %common;
 ]>
 
@@ -26,8 +26,8 @@
         ">
 
     <grammars>
-        <include href="xsd/api.xsd"/>
-        <include href="xsd/api-common.xsd"/>
+        <include href="../../common/xsd/api.xsd"/>
+        <include href="../../common/xsd/api-common.xsd"/>
         <include href="xsd/RAX-KSKEY-credentials.xsd" />
     </grammars>
     <!--*******************************************************-->
