@@ -156,9 +156,9 @@
                             </postProcess>
                         </configuration>
                     </execution>
-      </executions>
-      <configuration>
-		  <!-- These parameters apply to pdf and webhelp -->
+                </executions>
+                <configuration>
+                    <!-- These parameters apply to pdf and webhelp -->
                     <xincludeSupported>true</xincludeSupported>
                     <sourceDirectory>src/docbkx</sourceDirectory>
                     <profileSecurity>reviewer</profileSecurity>
