@@ -157,6 +157,28 @@
                         </configuration>
                     </execution>
                     <execution>
+                        <id>RAX-KSKEY</id>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includes>extensions/RAX-KSKEY/RAX-KSKEY-service-devguide.xml</includes>
+                            <trimWadlUriCount>1</trimWadlUriCount>
+                            <pdfUrl>RAX-KSKEY-service-devguide.pdf</pdfUrl>
+                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-KSKEY-service-devguide/content</canonicalUrlBase>
+                            <chunkSectionDepth>0</chunkSectionDepth>
+                            <postProcess>
+                                <copy todir="target/docbkx/webhelp/extensions/RAX-KSKEY/RAX-KSKEY-service-devguide/content/">
+                                    <fileset dir="target/docbkx/pdf/extensions/RAX-KSKEY">
+                                        <include name="**/RAX-KSKEY-service-devguide.pdf"/>
+                                    </fileset>
+                                </copy>
+                            </postProcess>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>RAX-KSKEY-admin</id>
                         <goals>
                             <goal>generate-pdf</goal>
@@ -172,7 +194,7 @@
                             <postProcess>
                                 <copy todir="target/docbkx/webhelp/extensions/RAX-KSKEY/RAX-KSKEY-admin-devguide/content/">
                                     <fileset dir="target/docbkx/pdf/extensions/RAX-KSKEY">
-                                        <include name="**/*.pdf"/>
+                                        <include name="**/RAX-KSKEY-admin-devguide.pdf"/>
                                     </fileset>
                                 </copy>
                             </postProcess>
