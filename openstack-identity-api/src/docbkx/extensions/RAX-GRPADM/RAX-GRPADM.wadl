@@ -4,10 +4,10 @@
 <!--                                                       -->
 <!--     You can resolve the entites with xmllint          -->
 <!--                                                       -->
-<!--        xmllint -noent RAX-GRPADM-admin.wadl           -->
+<!--        xmllint -noent RAX-GRPADM.wadl           -->
 <!--*******************************************************-->
 <!DOCTYPE application [
-<!ENTITY % common  SYSTEM "https://raw.github.com/openstack/keystone/master/keystone/content/common/common.ent">
+<!ENTITY % common  SYSTEM "../../common/common.ent">
     %common;
 ]>
 

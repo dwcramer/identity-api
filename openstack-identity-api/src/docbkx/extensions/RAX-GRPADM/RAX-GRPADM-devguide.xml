@@ -45,8 +45,8 @@
         <!ENTITY PUB_DATE "2011-01-23">
         <!ENTITY ALIAS "RAX-GRPADM">
         <!ENTITY NAMESPACE "http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0">
-        <!ENTITY CURRENTGUIDE "http://docs.openstack.org/api/openstack-identity/ext/admin/RAX-GRPADM-admin-devguide.pdf">
-        <!ENTITY CURRENTWADL "http://docs.openstack.org/api/openstack-identity/ext/admin/RAX-GRPADM-admin.wadl">
+        <!ENTITY CURRENTGUIDE "http://docs.openstack.org/api/openstack-identity/ext/admin/RAX-GRPADM.pdf">
+        <!ENTITY CURRENTWADL "http://docs.openstack.org/api/openstack-identity/ext/admin/RAX-GRPADM.wadl">
         <!ENTITY EXTENSIONXSD "http://docs.openstack.org/api/openstack-identity/ext/admin/common/xsd/RAX-KSGRP-groups.xsd">
 
 ]>
@@ -91,17 +91,17 @@
     </othercredit>
     <extension  xmlns="http://docs.openstack.org/common/api/v1.0"
                 xmlns:atom="http://www.w3.org/2005/Atom"
-                name="Rackspace Group Admin" namespace="http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0"
-                alias="RAX-KSGRP"
+                name="OpenStack Identity Rackspace Group Admin" namespace="http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0"
+                alias="RAX-GRPADM"
                 updated="2011-08-14T13:25:27-06:00">
         <description>
             Rackspace extensions to Keystone v2.0 API
             enabling Group Admin.
         </description>
         <atom:link rel="describedby" type="application/pdf"
-                   href="https://raw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/RAX-KSGRP/RAX-KSGRP-admin-devguide.pdf"/>
+                   href="https://raw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/RAX-GRPADM/RAX-GRPADM-devguide.pdf"/>
         <atom:link rel="describedby" type="application/vnd.sun.wadl+xml"
-                   href="https://raw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/RAX-KSGRP/RAX-KSGRP-admin.wadl"/>
+                   href="https://raw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/RAX-GRPADM/RAX-GRPADM.wadl"/>
     </extension>
     <abstract>
       <para>
@@ -173,7 +173,7 @@
       <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           xml:id="Admin_API_Service_Developer_Operations-d1e1357" version="5.0" role="api-reference">
-          <title>RAX-GRPADM-admin Extension API Operations</title>
+          <title>RAX-GRPADM Extension API Operations</title>
           <table rules="all">
               <caption>Authentication Header</caption>
               <thead>
@@ -194,28 +194,24 @@
           <para>A new resource is created at /RAX-GRPADM/groups that allows for the management of groups. </para>
           <section xml:id="User_Operations_RAX_KSGRPADM">
               <title>User Operations</title>
-          <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
-               <wadl:resource href="RAX-GRPADM-admin.wadl#groups"/>
-                   <wadl:method href="addGroup"/>
-               </wadl:resource>
-               <wadl:resource href="RAX-GRPADM-admin.wadl#group"/>
-                   <wadl:method href="getGroup"/>
-                   <wadl:method href="updateGroup"/>
-                   <wadl:method href="deleteGroup"/>
-               </wadl:resource>
-               <wadl:resource href="RAX-GRPADM-admin.wadl#user"/>
-                   <wadl:method href="addUserToGroup"/>
-                   <wadl:method href="removeUserFromGroup"/>
-               </wadl:resource>
-               <wadl:resource href="RAX-GRPADM-admin.wadl#users"/>
-                   <wadl:method href="getUsersForGroup"/>
-               </wadl:resource>
-          </wadl:resources>
-
-      </section>
-      <section>
-          <title>New Actions</title>
-          <para>None.</para>
+              <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                   <wadl:resource href="RAX-GRPADM.wadl#groups">
+                       <wadl:method href="addGroup"/>
+                   </wadl:resource>
+                   <wadl:resource href="RAX-GRPADM.wadl#group">
+                       <wadl:method href="getGroup"/>
+                       <wadl:method href="updateGroup"/>
+                       <wadl:method href="deleteGroup"/>
+                   </wadl:resource>
+                   <wadl:resource href="RAX-GRPADM.wadl#user">
+                       <wadl:method href="addUserToGroup"/>
+                       <wadl:method href="removeUserFromGroup"/>
+                   </wadl:resource>
+                   <wadl:resource href="RAX-GRPADM.wadl#users">
+                       <wadl:method href="getUsersForGroup"/>
+                   </wadl:resource>
+              </wadl:resources>
+          </section>
       </section>
   </chapter>
 </book>

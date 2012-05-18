@@ -222,32 +222,28 @@
                             </postProcess>
                         </configuration>
                     </execution>
-<!-- TODO CarlosM - Fix 
-[ERROR] Failed to execute goal com.rackspace.cloud.api:clouddocs-maven-plugin:1.3.0-SNAPSHOT:generate-pdf (RAX-GRPADM-admin) on project docs: Error executing ant tasks: /Users/carlos.marin/Documents/workspace/identity-api/openstack-identity-api/target/docbkx/pdf/extensions/RAX-GRPADM not found. -> [Help 1]
-
                     <execution>
-                        <id>RAX-GRPADM-admin</id>
+                        <id>RAX-GRPADM</id>
                         <goals>
                             <goal>generate-pdf</goal>
                             <goal>generate-webhelp</goal>
                         </goals>
                         <phase>generate-sources</phase>
                         <configuration>
-                            <includes>extensions/RAX-GRPADM/RAX-GRPADM-admin.xml</includes>
+                            <includes>extensions/RAX-GRPADM/RAX-GRPADM-devguide.xml</includes>
                             <trimWadlUriCount>1</trimWadlUriCount>
-                            <pdfUrl>RAX-GRPADM-admin.pdf</pdfUrl>
-                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-GRPADM-admin/content</canonicalUrlBase>
+                            <pdfUrl>RAX-GRPADM-devguide.pdf</pdfUrl>
+                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-GRPADM/content</canonicalUrlBase>
                             <chunkSectionDepth>0</chunkSectionDepth>
                             <postProcess>
-                                <copy todir="target/docbkx/webhelp/extensions/RAX-GRPADM/RAX-GRPADM-admin/content/">
+                                <copy todir="target/docbkx/webhelp/extensions/RAX-GRPADM/RAX-GRPADM/content/">
                                     <fileset dir="target/docbkx/pdf/extensions/RAX-GRPADM">
-                                        <include name="**/RAX-GRPADM-admin.pdf"/>
+                                        <include name="**/RAX-GRPADM-devguide.pdf"/>
                                     </fileset>
                                 </copy>
                             </postProcess>
                         </configuration>
                     </execution>
--->
                 </executions>
                 <configuration>
                     <!-- These parameters apply to pdf and webhelp -->
