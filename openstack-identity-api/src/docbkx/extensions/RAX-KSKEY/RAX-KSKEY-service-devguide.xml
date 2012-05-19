@@ -31,6 +31,8 @@
         <td colspan="4">Description</td>
         </tr>
         </thead>'>
+        <!ENTITY NAMESPACE "http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0">
+        <!ENTITY EXTENSIONXSD "xsd/RAX-KSKEY-credentials.xsd">
         <!ENTITY APIKEYCREDENTIALSREQUESTXML "samples/apiKeyCredentials.xml">
         <!ENTITY APIKEYCREDENTIALSREQUESTJSON "samples/apiKeyCredentials.json">
         <!ENTITY APIKEYCREDENTIALSRESPONSEXML "../../common/samples/auth.xml">

@@ -20,7 +20,7 @@
    xmlns:xsdxt="http://docs.rackspacecloud.com/xsd-ext/v1.0">
 
     <grammars>
-        <include href="xsd/api.xsd"/>
+        <include href="../../common/xsd/api.xsd"/>
     </grammars>
 
     <resources base="http://localhost:35357">

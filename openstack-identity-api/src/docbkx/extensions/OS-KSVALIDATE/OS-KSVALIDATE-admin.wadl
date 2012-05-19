@@ -7,7 +7,7 @@
 <!--        xmllint -noent OS-KSVALIDATE-admin.wadl             -->
 <!--*******************************************************-->
 <!DOCTYPE application [
-<!ENTITY % common  SYSTEM "common.ent">
+<!ENTITY % common  SYSTEM "../../common/common.ent">
     %common;
 ]>
 

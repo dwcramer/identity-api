@@ -134,6 +134,30 @@
                             </postProcess>
                         </configuration>
                     </execution>
+
+                    <execution>
+                        <id>RAX-KSGRP</id>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includes>extensions/RAX-KSGRP/RAX-KSGRP-service-devguide.xml</includes>
+                            <trimWadlUriCount>1</trimWadlUriCount>
+                            <pdfUrl>RAX-KSGRP-devguide.pdf</pdfUrl>
+                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-KSGRP/content</canonicalUrlBase>
+                            <chunkSectionDepth>0</chunkSectionDepth>
+                            <postProcess>
+                                <copy todir="target/docbkx/webhelp/extensions/RAX-KSGRP/RAX-KSGRP/content/">
+                                    <fileset dir="target/docbkx/pdf/extensions/RAX-KSGRP">
+                                        <include name="**/RAX-KSGRP-devguide.pdf"/>
+                                    </fileset>
+                                </copy>
+                            </postProcess>
+                        </configuration>
+                    </execution>
+
                     <execution>
                         <id>HP-IDM</id>
                         <goals>
@@ -244,6 +268,7 @@
                             </postProcess>
                         </configuration>
                     </execution>
+
                 </executions>
                 <configuration>
                     <!-- These parameters apply to pdf and webhelp -->
