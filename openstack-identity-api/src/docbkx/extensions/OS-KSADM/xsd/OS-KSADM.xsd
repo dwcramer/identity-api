@@ -21,7 +21,7 @@
             schemaLocation="atom/atom.xsd" />
 
     <import namespace="http://docs.openstack.org/identity/api/v2.0"
-            schemaLocation="api.xsd" />
+            schemaLocation="../../../common/xsd/api.xsd" />
 
     <!-- Attribute -->
     <attribute name="password" type="xsd:string">

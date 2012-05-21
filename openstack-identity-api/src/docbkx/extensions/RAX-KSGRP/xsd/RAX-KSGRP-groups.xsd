@@ -19,7 +19,7 @@
         schemaLocation="token.xsd"/>
 
     <import namespace="http://docs.openstack.org/identity/api/v2.0"
-        schemaLocation="api.xsd" />
+        schemaLocation="../../../common/xsd/api.xsd" />
     
     
     <element name="groups" type="RAX-KSGRP:Groups"/>

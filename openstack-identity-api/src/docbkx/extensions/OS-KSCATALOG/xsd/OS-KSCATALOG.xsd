@@ -20,7 +20,7 @@
             schemaLocation="atom/atom.xsd" />
 
     <import namespace="http://docs.openstack.org/identity/api/v2.0"
-        schemaLocation="api.xsd" />
+        schemaLocation="../../../common/xsd/api.xsd" />
     
     <element name="endpointTemplates" type="OS-KSCATALOG:EndpointTemplateList">
         <annotation>

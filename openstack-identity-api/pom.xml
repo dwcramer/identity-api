@@ -149,7 +149,7 @@
                             <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/OS-KSCATALOG/content</canonicalUrlBase>
                             <chunkSectionDepth>0</chunkSectionDepth>
                             <postProcess>
-                                <copy todir="target/docbkx/webhelp/extensions/OS-KSCATALOG/OS-KSCATALOG/content/">
+                                <copy todir="target/docbkx/webhelp/extensions/OS-KSCATALOG/OS-KSCATALOG-admin-devguide/content/">
                                     <fileset dir="target/docbkx/pdf/extensions/OS-KSCATALOG">
                                         <include name="**/OS-KSCATALOG-admin-devguide.pdf"/>
                                     </fileset>
