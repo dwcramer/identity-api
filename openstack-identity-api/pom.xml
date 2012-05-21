@@ -136,6 +136,29 @@
                     </execution>
 
                     <execution>
+                        <id>OS-KSCATALOG</id>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includes>extensions/OS-KSCATALOG/OS-KSCATALOG-admin-devguide.xml</includes>
+                            <trimWadlUriCount>1</trimWadlUriCount>
+                            <pdfUrl>OS-KSCATALOG-admin-devguide.pdf</pdfUrl>
+                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/OS-KSCATALOG/content</canonicalUrlBase>
+                            <chunkSectionDepth>0</chunkSectionDepth>
+                            <postProcess>
+                                <copy todir="target/docbkx/webhelp/extensions/OS-KSCATALOG/OS-KSCATALOG/content/">
+                                    <fileset dir="target/docbkx/pdf/extensions/OS-KSCATALOG">
+                                        <include name="**/OS-KSCATALOG-admin-devguide.pdf"/>
+                                    </fileset>
+                                </copy>
+                            </postProcess>
+                        </configuration>
+                    </execution>
+                    
+                    <execution>
                         <id>RAX-KSGRP</id>
                         <goals>
                             <goal>generate-pdf</goal>
