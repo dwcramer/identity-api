@@ -82,7 +82,6 @@
     <method name="GET" id="listEndpointTemplates">
         <doc xml:lang="EN" title="List Endpoint Templates">
             <p xmlns="http://www.w3.org/1999/xhtml">List Endpoint Templates.</p>
-
         </doc>
         <request>
             <param name="serviceId" style="query" required="false" type="xsd:string"/>
@@ -106,7 +105,6 @@
     <method name="GET" id="getEndpointTemplate">
         <doc xml:lang="EN" title="Get Endpoint Template">
             <p xmlns="http://www.w3.org/1999/xhtml">Get Endpoint Template.</p>
-
         </doc>
         <response status="200 203">
             <representation mediaType="application/xml" element="OS-KSCATALOG:endpointTemplate">
@@ -127,8 +125,6 @@
     <method name="POST" id="addEndpointTemplate">
         <doc xml:lang="EN" title="Add Endpoint Template">
             <p xmlns="http://www.w3.org/1999/xhtml">Add Endpoint Template.</p>
-
-
         </doc>
         <request>
             <representation mediaType="application/xml" element="OS-KSCATALOG:endpointTemplate">
@@ -206,8 +202,6 @@
     <method name="POST" id="addEndpoint">
         <doc xml:lang="EN" title="Add Endpoint">
             <p xmlns="http://www.w3.org/1999/xhtml">Add Endpoint to a tenant.</p>
-
-
         </doc>
         <request>
             <representation mediaType="application/xml" element="OS-KSCATALOG:endpointTemplate">
