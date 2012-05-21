@@ -265,7 +265,7 @@ format="SVG" scale="60"/>
                         <wadl:method href="getUserCredential"/>
                     </wadl:resource>
                 </wadl:resources>
-            </section>	
+            </section>    
         </section>
     </chapter>
 </book>

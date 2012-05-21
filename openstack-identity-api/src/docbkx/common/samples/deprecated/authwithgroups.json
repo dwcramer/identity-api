@@ -8,10 +8,10 @@
             "id":"123",
             "name":"testName",
             "roles":[{
-            		"id":"234",
+                    "id":"234",
                     "name":"compute:admin"
                 },
-				{
+                {
                     "id":"235",
                     "name":"object-store:admin",
                     "tenantId":"1"

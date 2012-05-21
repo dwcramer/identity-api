@@ -519,17 +519,17 @@ trc.util.yui = {
         //
         // Load YUI dependecies...
         //
-	var loader = new YAHOO.util.YUILoader({
-	    require: required,
-	    loadOptional: true,
+    var loader = new YAHOO.util.YUILoader({
+        require: required,
+        loadOptional: true,
             filter: "RAW",
-	    onSuccess: function() {
+        onSuccess: function() {
                 yuiUtil._depsLoaded();
-	    },
-	    timeout: 10000,
-	    combine: true
-	});
-	loader.insert();
+        },
+        timeout: 10000,
+        combine: true
+    });
+    loader.insert();
     },
 
     //
