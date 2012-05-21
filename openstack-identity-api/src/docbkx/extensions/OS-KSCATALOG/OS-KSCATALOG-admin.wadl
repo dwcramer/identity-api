@@ -259,6 +259,7 @@
     <method name="GET" id="getEndpoint">
         <doc xml:lang="EN" title="Get Endpoint">
             <p xmlns="http://www.w3.org/1999/xhtml">Get Endpoint of a Tenant.</p>
+        </doc>
         <response status="200 203">
             <representation mediaType="application/xml" element="identity:endpoint">
             <doc xml:lang="EN">
