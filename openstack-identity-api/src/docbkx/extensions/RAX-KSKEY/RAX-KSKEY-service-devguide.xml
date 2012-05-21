@@ -94,7 +94,11 @@
             enabling API Key authentication.
         </description>
         <atom:link rel="describedby" type="application/pdf"
-                   href="https://github.com/openstack/keystone/raw/master/keystone/content/service/RAX-KSKEY-service-devguide.pdf"/>
+                   href="http://docs.rackspacecloud.com/auth/api/v2.0/RAX-KSKEY/RAX-KSKEY-service-devguide.pdf"/>
+
+        <atom:link rel="describedby" type="application/xml"
+                   href="http://docs.rackspacecloud.com/auth/api/v2.0/RAX-KSKEY/xsd/RAX-KSKEY-credentials.xsd" />
+
     </extension>
     <revhistory>
         <revision>

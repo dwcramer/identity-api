@@ -34,7 +34,7 @@ format="SVG" scale="60"/>
 </tr>
 </thead>'>
 <!ENTITY NAMESPACE "http://docs.openstack.org/identity/api/ext/OS-KSCATALOG/v1.0">
-<!ENTITY CURRENTGUIDE "http://docs.openstack.org/">
+<!ENTITY CURRENTGUIDE "http://docs.openstack.org/identity/api/v2.0">
 <!ENTITY CURRENTWADL "OS-KSCATALOG-admin.wadl">
 <!ENTITY EXTENSIONXSD "xsd/OS-KSCATALOG.xsd">
 ]>
