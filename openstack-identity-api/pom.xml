@@ -128,9 +128,16 @@
                                     </fileset>
                                 </copy>
                                 <!--Moves PDF to the needed placement for web site and Google Analytics tracking-->
+<!--
                                 <move failonerror="false"
                                       file="${basedir}/target/docbkx/pdf/common/identity-dev-guide.pdf"
                                       tofile="${basedir}/target/docbkx/webhelp/api/openstack-identity-service/2.0/content/identity-dev-guide-2.0.pdf"/>
+-->
+                                <copy todir="${basedir}/target/docbkx/webhelp/api/openstack-identity-service/2.0/content/">
+                                    <fileset dir="${basedir}/target/docbkx/pdf/common">
+                                        <include name="**/identity-dev-guide-2.0.pdf" />
+                                    </fileset>
+                                </copy>
                             </postProcess>
                         </configuration>
                     </execution>
@@ -157,7 +164,7 @@
                             </postProcess>
                         </configuration>
                     </execution>
-                    
+
                     <execution>
                         <id>OS-KSCATALOG</id>
                         <goals>
@@ -191,13 +198,13 @@
                         <configuration>
                             <includes>extensions/RAX-KSGRP/RAX-KSGRP-service-devguide.xml</includes>
                             <trimWadlUriCount>1</trimWadlUriCount>
-                            <pdfUrl>RAX-KSGRP-devguide.pdf</pdfUrl>
+                            <pdfUrl>RAX-KSGRP-service-devguide.pdf</pdfUrl>
                             <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-KSGRP/content</canonicalUrlBase>
                             <chunkSectionDepth>0</chunkSectionDepth>
                             <postProcess>
                                 <copy todir="target/docbkx/webhelp/extensions/RAX-KSGRP/RAX-KSGRP-service-devguide/content/">
                                     <fileset dir="target/docbkx/pdf/extensions/RAX-KSGRP">
-                                        <include name="**/RAX-KSGRP-devguide.pdf"/>
+                                        <include name="**/RAX-KSGRP-service-devguide.pdf"/>
                                     </fileset>
                                 </copy>
                             </postProcess>
