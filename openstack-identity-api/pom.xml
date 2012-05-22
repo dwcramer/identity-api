@@ -133,9 +133,15 @@
                                       file="${basedir}/target/docbkx/pdf/common/identity-dev-guide.pdf"
                                       tofile="${basedir}/target/docbkx/webhelp/api/openstack-identity-service/2.0/content/identity-dev-guide-2.0.pdf"/>
 -->
-                                <copy todir="${basedir}/target/docbkx/webhelp/api/openstack-identity-service/2.0/content/">
+                                <copy tofile="${basedir}/target/docbkx/webhelp/api/openstack-identity-service/2.0/content/identity-dev-guide-2.0.pdf">
                                     <fileset dir="${basedir}/target/docbkx/pdf/common">
-                                        <include name="**/identity-dev-guide-2.0.pdf" />
+                                        <include name="**/identity-dev-guide*.pdf" />
+                                    </fileset>
+                                </copy>
+                                
+                                <copy tofile="${basedir}/target/docbkx/webhelp/common/identity-dev-guide/content/identity-dev-guide-2.0.pdf">
+                                    <fileset dir="${basedir}/target/docbkx/pdf/common">
+                                        <include name="**/identity-dev-guide*.pdf" />
                                     </fileset>
                                 </copy>
                             </postProcess>
