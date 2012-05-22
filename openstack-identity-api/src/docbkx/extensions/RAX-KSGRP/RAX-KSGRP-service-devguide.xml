@@ -102,8 +102,8 @@
                 </description>
                 <atom:link rel="describedby" type="application/pdf"
                             href="httaw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/RAX-KSGRP/RAX-KSGRP-devguide.pdf"/>
-                <atom:link rel="describedby" type="application/vnd.sun.wadl+xml"
-                      f="https://raw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/RAX-KSGRP/RAX-KSGRP.wadl"/>
+                <atom:link rel="describedby" type="application/vnd.sun.wadl+xml" 
+                            href="https://raw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/RAX-KSGRP/RAX-KSGRP.wadl"/>
     </extension>
     <abstract>
       <para>

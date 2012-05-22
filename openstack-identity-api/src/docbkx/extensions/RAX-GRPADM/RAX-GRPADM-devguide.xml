@@ -47,7 +47,7 @@
         <!ENTITY NAMESPACE "http://docs.rackspace.com/identity/api/ext/RAX-KSGRP/v1.0">
         <!ENTITY CURRENTGUIDE "http://docs.openstack.org/api/openstack-identity/ext/admin/RAX-GRPADM.pdf">
         <!ENTITY CURRENTWADL "http://docs.openstack.org/api/openstack-identity/ext/admin/RAX-GRPADM.wadl">
-        <!ENTITY EXTENSIONXSD "http://docs.openstack.org/api/openstack-identity/ext/admin/common/xsd/RAX-KSGRP-groups.xsd">
+        <!ENTITY EXTENSIONXSD "http://docs.openstack.org/api/openstack-identity/ext/admin/common/xsd/RAX-GRPADM.xsd">
 
 ]>
 <book xmlns="http://docbook.org/ns/docbook"

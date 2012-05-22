@@ -136,6 +136,29 @@
                     </execution>
 
                     <execution>
+                        <id>OS-KSADM</id>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includes>extensions/OS-KSADM/OS-KSADM-admin-devguide.xml</includes>
+                            <trimWadlUriCount>1</trimWadlUriCount>
+                            <pdfUrl>OS-KSADM-admin-devguide.pdf</pdfUrl>
+                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/OS-KSADM/content</canonicalUrlBase>
+                            <chunkSectionDepth>0</chunkSectionDepth>
+                            <postProcess>
+                                <copy todir="target/docbkx/webhelp/extensions/OS-KSADM/OS-KSADM-admin-devguide/content/">
+                                    <fileset dir="target/docbkx/pdf/extensions/OS-KSADM">
+                                        <include name="**/OS-KSADM-admin-devguide.pdf"/>
+                                    </fileset>
+                                </copy>
+                            </postProcess>
+                        </configuration>
+                    </execution>
+                    
+                    <execution>
                         <id>OS-KSCATALOG</id>
                         <goals>
                             <goal>generate-pdf</goal>
@@ -172,7 +195,7 @@
                             <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-KSGRP/content</canonicalUrlBase>
                             <chunkSectionDepth>0</chunkSectionDepth>
                             <postProcess>
-                                <copy todir="target/docbkx/webhelp/extensions/RAX-KSGRP/RAX-KSGRP/content/">
+                                <copy todir="target/docbkx/webhelp/extensions/RAX-KSGRP/RAX-KSGRP-service-devguide/content/">
                                     <fileset dir="target/docbkx/pdf/extensions/RAX-KSGRP">
                                         <include name="**/RAX-KSGRP-devguide.pdf"/>
                                     </fileset>
@@ -283,7 +306,7 @@
                             <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/RAX-GRPADM/content</canonicalUrlBase>
                             <chunkSectionDepth>0</chunkSectionDepth>
                             <postProcess>
-                                <copy todir="target/docbkx/webhelp/extensions/RAX-GRPADM/RAX-GRPADM/content/">
+                                <copy todir="target/docbkx/webhelp/extensions/RAX-GRPADM/RAX-GRPADM-devguide/content/">
                                     <fileset dir="target/docbkx/pdf/extensions/RAX-GRPADM">
                                         <include name="**/RAX-GRPADM-devguide.pdf"/>
                                     </fileset>

@@ -68,110 +68,150 @@ format="SVG" scale="60"/>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
+        <othercredit>
+            <personname>
+                <firstname>Joe</firstname>
+                <surname>Savak</surname>
+            </personname>
+            <email>joe.savak@RACKSPACE.COM</email>
+        </othercredit>
+        <extension  xmlns="http://docs.openstack.org/common/api/v1.0"
+                    xmlns:atom="http://www.w3.org/2005/Atom"
+                    name="Openstack Keystone Admin" namespace="http://docs.openstack.org/identity/api/ext/OS-KSADM/v1.0"
+                    alias="OS-KSADM"
+                    updated="2011-08-14T13:25:27-06:00">
+                    <description>
+                                Openstack extensions to Keystone v2.0 
+                                API enabling Admin Operations.
+                    </description>
+                    <atom:link rel="describedby" type="application/pdf"
+                                href="https://raw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/OS-KSADM/OS-KSADM-admin-devguide.pdf"/>
+                    <atom:link rel="describedby" type="application/pdf"
+                                href="https://raw.github.com/openstack/identity-api/master/openstack-identity-api/src/docbkx/extensions/OS-KSADM/OS-KSADM-admin.wadl"/>
+        </extension>
+
         <abstract>
             <para>This document includes details on various operations supported by the OS-KSADM extensions on top of core keystone operations.</para>
         </abstract>
     </info>
-    <!-- Chapters are referred from the book file through these include statements. You can add additional chapters using these types of statements. -->
-    <chapter xml:id="chapter-0000">
-        <title>About This Extension</title>
-        <variablelist spacing="compact">
-            <varlistentry>
-                <term>Name</term>
-                <listitem>
-                    <para>OpenStack KSADM Extension</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Namespace</term>
-                <listitem>
-                    <para>&NAMESPACE;</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Alias</term>
-                <listitem>
-                    <para>&ALIAS;</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Dependencies</term>
-                <listitem>
-                    <para>Keystone - OpenStack Identity</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Doc Link (PDF)</term>
-                <listitem>
-                    <para>
-                        <link
-                            xlink:href="&CURRENTGUIDE;"
-                            >
-                            &CURRENTGUIDE;
-                        </link>
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Doc Link (WADL)</term>
-                <listitem>
-                    <para>
-                        <link
-                            xlink:href="&CURRENTWADL;"
-                            >
-                            &CURRENTWADL;
-                        </link>
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Doc Link (XSD)</term>
-                <listitem>
-                    <para>
-                        <link xlink:href="&EXTENSIONXSD;">
-                            &EXTENSIONXSD;
-                        </link>
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Short Description</term>
-                <listitem>
-                    <para>
-                        OpenStack KSADM Admin Extension to Keystone v2.0 API adds the capability to do CRUD on Users, Tenants, Roles and Services.
-                    </para>
-                </listitem>
-            </varlistentry>
-        </variablelist>
-        <?hard-pagebreak?>
-        <section xml:id="Doc-Change-0001">
-            <title>Document Change History</title>
-            <informaltable rules='all'>
+
+    <chapter xml:id="api_operations" role="api-reference">
+        <title>Extension Operations</title>
+<!--
+        <xi:include href="../common/identity-OS-KSADM-api.xml"/>
+-->
+        <section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            xml:id="Admin_API_Service_Developer_Operations-d1e1357" version="5.0" role="api-reference">
+            <title>OS-KSADM Admin Extension API (Service Developer Operations)</title>
+            <para>Extension operations. </para>
+            <table rules="all">
+                <caption>Authentication Header</caption>
                 <thead>
                     <tr>
-                        <td align="center" colspan="1">Revision Date</td>
-                        <td align="center" colspan="4">Summary of Changes</td>
+                        <td>Header Type</td>
+                        <td>Name</td>
+                        <td>Value</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="1" align="center">Sep. 09, 2011</td>
-                        <td colspan="4">
-                            <itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>
-                                        Initial release.
-                                    </para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
+                        <td>HTTP/1.1 Request</td>
+                        <td>X-Auth-Token</td>
+                        <td>txfa8426a08eaf</td>
                     </tr>
                 </tbody>
-            </informaltable>
+            </table>
+            <para>The following calls are supported by OS-KSADM-admin Extension:</para>
+            <section xml:id="User_Operations_OS-KSADM">
+                <title>User Operations</title>
+                <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <wadl:resource href="OS-KSADM-admin.wadl#users">
+                        <wadl:method href="listUsers"/>
+                        <wadl:method href="addUser"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#userById">
+                        <wadl:method href="updateUser"/>
+                        <wadl:method href="deleteUser"/>
+                    </wadl:resource>
+<!--
+                    <wadl:resource href="OS-KSADM-admin.wadl#user-OS-KSADM">
+                        <wadl:method href="setUserEnabled"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#userRoles">
+                        <wadl:method href="listUserRoles"/>
+                    </wadl:resource>
+-->
+                    <wadl:resource href="OS-KSADM-admin.wadl#userRoleById">
+                        <wadl:method href="addUserRole"/>
+                        <wadl:method href="getUserRole"/>
+                        <wadl:method href="deleteUserRole"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#userCredentials">
+                        <wadl:method href="addUserCredential"/>
+                        <wadl:method href="listCredentials"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#userCredentialsByType">
+                        <wadl:method href="listCredentialsByType"/>
+                        <wadl:method href="updateUserCredential"/>
+                        <wadl:method href="deleteUserCredential"/>
+                        <wadl:method href="getUserCredential"/>
+                    </wadl:resource>
+                </wadl:resources>
+            </section>
+
+            <section xml:id="Tenant_Operations_OS-KSADM">
+                <title>Tenant Operations</title>
+                <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <wadl:resource href="OS-KSADM-admin.wadl#tenants">
+                        <wadl:method href="addTenant"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#tenantById">
+                        <wadl:method href="updateTenant"/>
+                        <wadl:method href="deleteTenant"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#usersForTenant">
+                        <wadl:method href="listUsersForTenant"/>
+                        <wadl:method href="listUsersWithRoleForTenant"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#rolesForTenant">
+                        <wadl:method href="listRolesForTenant"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#userSpecificRoleForTenant">
+                        <wadl:method href="addRolesToUserOnTenant"/>
+                        <wadl:method href="deleteRoleFromUserOnTenant"/>
+                    </wadl:resource>
+                </wadl:resources>
+            </section>
+            
+            <section xml:id="Role_Operations_OS-KSADM">
+                <title>Role Operations</title>
+                <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <wadl:resource href="OS-KSADM-admin.wadl#roles">
+                        <wadl:method href="listRoles"/>
+                        <wadl:method href="addRole"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#roleId">
+                        <wadl:method href="getRole"/>
+                        <wadl:method href="deleteRole"/>
+                    </wadl:resource>
+                </wadl:resources>
+            </section>        
+            
+            <section xml:id="Service_Operations_OS-KSADM">
+                <title>Service Operations</title>
+                <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <wadl:resource href="OS-KSADM-admin.wadl#services">
+                        <wadl:method href="listServices"/>
+                        <wadl:method href="addService"/>
+                    </wadl:resource>
+                    <wadl:resource href="OS-KSADM-admin.wadl#serviceId">
+                        <wadl:method href="getService"/>
+                        <wadl:method href="deleteService"/>
+                    </wadl:resource>
+                </wadl:resources>
+            </section>        
         </section>
-    </chapter>    
-    <chapter xml:id="api_operations" role="api-reference">
-        <title>Extension Operations</title>
-        <xi:include href="../common/identity-OS-KSADM-api.xml"/>
+
     </chapter>
 </book>

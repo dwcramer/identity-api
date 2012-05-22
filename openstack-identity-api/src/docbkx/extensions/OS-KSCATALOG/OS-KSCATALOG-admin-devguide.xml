@@ -87,109 +87,10 @@ format="SVG" scale="60"/>
                                 href="https://github.com/openstack/keystone/raw/master/keystone/content/admin/OS-KSCATALOG-admin.wadl"/>
         </extension>
 
-
         <abstract>
             <para>This document includes details on various operations supported by the OS-KSCATALOG extensions on top of core keystone operations. </para>
         </abstract>
     </info>
-
-<!-- 
-    <chapter xml:id="chapter-0000">
-        <title>About This Extension</title>
-        <variablelist spacing="compact">
-            <varlistentry>
-                <term>Name</term>
-                <listitem>
-                    <para>OpenStack KSCATALOG Extension</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Namespace</term>
-                <listitem>
-                    <para>&NAMESPACE;</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Alias</term>
-                <listitem>
-                    <para>&ALIAS;</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Dependencies</term>
-                <listitem>
-                    <para>Keystone - OpenStack Identity</para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Doc Link (PDF)</term>
-                <listitem>
-                    <para>
-                        <link
-                            xlink:href="&CURRENTGUIDE;"
-                            >
-                            &CURRENTGUIDE;
-                        </link>
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Doc Link (WADL)</term>
-                <listitem>
-                    <para>
-                        <link xlink:href="&CURRENTWADL;">
-                            &CURRENTWADL;
-                        </link>
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Doc Link (XSD)</term>
-                <listitem>
-                    <para>
-                        <link xlink:href="&EXTENSIONXSD;">
-                            &EXTENSIONXSD;
-                        </link>
-                    </para>
-                </listitem>
-            </varlistentry>
-            <varlistentry>
-                <term>Short Description</term>
-                <listitem>
-                    <para>
-                        OpenStack KSCATALOG Admin Extension to Keystone v2.0 API adds the capability to do CRUD on Endpoint Templates and Endpoints.
-                    </para>
-                </listitem>
-            </varlistentry>
-        </variablelist>
-        <?hard-pagebreak?>
-        <section xml:id="Doc-Change-0001">
-            <title>Document Change History</title>
-            <informaltable rules='all'>
-                <thead>
-                    <tr>
-                        <td align="center" colspan="1">Revision Date</td>
-                        <td align="center" colspan="4">Summary of Changes</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td colspan="1" align="center">Sep. 09, 2011</td>
-                        <td colspan="4">
-                            <itemizedlist spacing="compact">
-                                <listitem>
-                                    <para>
-                                        Initial release.
-                                    </para>
-                                </listitem>
-                            </itemizedlist>
-                        </td>
-                    </tr>
-                </tbody>
-            </informaltable>
-        </section>
-    </chapter>
--->
 
     <chapter xml:id="api_operations" role="api-reference">
         <title>Extension Operations</title>
