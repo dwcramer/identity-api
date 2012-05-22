@@ -134,17 +134,15 @@ format="SVG" scale="60"/>
                         <wadl:method href="updateUser"/>
                         <wadl:method href="deleteUser"/>
                     </wadl:resource>
-<!--
-                    <wadl:resource href="OS-KSADM-admin.wadl#user-OS-KSADM">
+                    <wadl:resource href="OS-KSADM-admin.wadl#enabled">
                         <wadl:method href="setUserEnabled"/>
                     </wadl:resource>
                     <wadl:resource href="OS-KSADM-admin.wadl#userRoles">
                         <wadl:method href="listUserRoles"/>
                     </wadl:resource>
--->
                     <wadl:resource href="OS-KSADM-admin.wadl#userRoleById">
                         <wadl:method href="addUserRole"/>
-                        <wadl:method href="getUserRole"/>
+                        <!-- <wadl:method href="getUserRole"/> -->
                         <wadl:method href="deleteUserRole"/>
                     </wadl:resource>
                     <wadl:resource href="OS-KSADM-admin.wadl#userCredentials">
@@ -152,7 +150,7 @@ format="SVG" scale="60"/>
                         <wadl:method href="listCredentials"/>
                     </wadl:resource>
                     <wadl:resource href="OS-KSADM-admin.wadl#userCredentialsByType">
-                        <wadl:method href="listCredentialsByType"/>
+                        <!-- <wadl:method href="listCredentialsByType"/> -->
                         <wadl:method href="updateUserCredential"/>
                         <wadl:method href="deleteUserCredential"/>
                         <wadl:method href="getUserCredential"/>
@@ -172,11 +170,13 @@ format="SVG" scale="60"/>
                     </wadl:resource>
                     <wadl:resource href="OS-KSADM-admin.wadl#usersForTenant">
                         <wadl:method href="listUsersForTenant"/>
-                        <wadl:method href="listUsersWithRoleForTenant"/>
+                        <!-- <wadl:method href="listUsersWithRoleForTenant"/> -->
                     </wadl:resource>
+                    <!-- 
                     <wadl:resource href="OS-KSADM-admin.wadl#rolesForTenant">
                         <wadl:method href="listRolesForTenant"/>
                     </wadl:resource>
+                    -->
                     <wadl:resource href="OS-KSADM-admin.wadl#userSpecificRoleForTenant">
                         <wadl:method href="addRolesToUserOnTenant"/>
                         <wadl:method href="deleteRoleFromUserOnTenant"/>
