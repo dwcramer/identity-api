@@ -327,7 +327,28 @@
                             </postProcess>
                         </configuration>
                     </execution>
-
+                    <execution>
+                        <id>OS-KSEC2-admin</id>
+                        <goals>
+                            <goal>generate-pdf</goal>
+                            <goal>generate-webhelp</goal>
+                        </goals>
+                        <phase>generate-sources</phase>
+                        <configuration>
+                            <includes>extensions/OS-KSEC2/OS-KSEC2-admin-devguide.xml</includes>
+                            <trimWadlUriCount>1</trimWadlUriCount>
+                            <pdfUrl>OS-KSEC2-admin-devguide.pdf</pdfUrl>
+                            <canonicalUrlBase>http://docs.rackspacecloud.com/openstack-extensions/auth/OS-KSEC2-admin-devguide/content</canonicalUrlBase>
+                            <chunkSectionDepth>0</chunkSectionDepth>
+                            <postProcess>
+                                <copy todir="target/docbkx/webhelp/extensions/OS-KSEC2/OS-KSEC2-admin-devguide/content/">
+                                    <fileset dir="target/docbkx/pdf/extensions/OS-KSEC2">
+                                        <include name="**/OS-KSEC2-admin-devguide.pdf"/>
+                                    </fileset>
+                                </copy>
+                            </postProcess>
+                        </configuration>
+                    </execution>
                 </executions>
                 <configuration>
                     <!-- These parameters apply to pdf and webhelp -->
