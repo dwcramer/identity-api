@@ -16,7 +16,7 @@
 >
     <!--Import schema we are extending -->
     <import namespace="http://docs.openstack.org/identity/api/v2.0"
-        schemaLocation="token.xsd"/>
+        schemaLocation="../../../common/xsd/token.xsd"/>
 
     <import namespace="http://docs.openstack.org/identity/api/v2.0"
         schemaLocation="../../../common/xsd/api.xsd" />

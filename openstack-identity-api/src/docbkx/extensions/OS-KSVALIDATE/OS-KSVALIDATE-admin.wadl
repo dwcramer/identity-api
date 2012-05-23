@@ -24,8 +24,8 @@
     ">
 
     <grammars>
-        <include href="../common/api.xsd"/>
-        <include href="../common/api-common.xsd"/>
+        <include href="../../common/xsd/api.xsd"/>
+        <include href="../../common/xsd/api-common.xsd"/>
     </grammars>
 
     <!--*******************************************************-->

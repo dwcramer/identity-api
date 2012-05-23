@@ -28,7 +28,7 @@
     <grammars>
         <include href="../../common/xsd/api.xsd"/>
         <include href="../../common/xsd/api-common.xsd"/>
-        <include href="xsd/OS-KSEC2-credentials.xsd" />
+        <include href="../OS-KSEC2/xsd/OS-KSEC2-credentials.xsd" />
     </grammars>
     <!--*******************************************************-->
     <!--             All Resoruces                             -->
